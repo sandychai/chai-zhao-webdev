@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/style.css" rel="stylesheet"/>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+
 
 <nav class="navbar navbar-default label-primary">
     <div class="container-fluid">
@@ -15,10 +7,10 @@
           <span class="white">
                 Widget Edit
           </span>
-                <a href="widget-list.html">
-                    <span class="glyphicon glyphicon-plus white entypo-search-5"></span>
+                <a ng-click="model.updateWidget(model.widget)">
+                    <span class="glyphicon glyphicon-ok white entypo-search-3"></span>
                 </a>
-                <a href="widget-list.html">
+                <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
                     <span class="glyphicon glyphicon-chevron-left pull-left white"></span>
                 </a>
             </div>
@@ -30,23 +22,23 @@
         <div class="containerfluid">
             <label for="name">Name</label>
             <input id="name"
+                   ng-model="model.widget.name"
                    class="form-control"
                    value=""/>
 
             <label for="description">Text</label>
-            <input id="description"
+            <textarea id="description"
+                      ng-model="model.widget.text"
                       rows="5"
-                      class="form-control"></input>
+                      class="form-control"></textarea>
 
-            <label for="size">URL</label>
-            <input id="size"
-                      class="form-control">3</input>
+            <label for="size">Size</label>
+            <textarea id="size"
+                      ng-model="model.widget.size"
+                      rows="5"
+                      class="form-control"></textarea>
 
-            <label for="width">Width</label>
-            <input id="width"
-                      class="form-control">100%</input>
-
-            <a href="widget-list.html"
+            <a ng-click="model.deleteWidget(model.widgetId)"
                class="btn btn-block btn-danger">
                 Delete
             </a>
@@ -59,13 +51,11 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <div class="navbar-brand">
-                    <a href="#">
-                        <span class="glyphicon glyphicon-user pull-right white entypo-search-2"></span>
+                    <a href="#!/user/{{model.userId}}">
+                        <span class="glyphicon glyphicon-user pull-right white entypo-search-3"></span>
                     </a>
                 </div>
             </div>
         </div>
     </div>
 </nav>
-</body>
-</html>>
