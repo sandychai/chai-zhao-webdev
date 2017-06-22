@@ -9,8 +9,11 @@
         model.userId = $routeParams['userId'];
 
         function init() {
-            model.websites = websiteService.findAllWebsitesForUser(model.userId);
-            //var temp = angular.copy(websitesname);
+            websiteService
+                .findAllWebsitesForUser(model.userId)
+                .then(function (websites) {
+                    model.websites = websites;
+                });
         }
 
         init();

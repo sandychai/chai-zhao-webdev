@@ -18,7 +18,7 @@
                 return;
             }
 
-            var found = userService.findUserByUsername(username);
+            var found = null;//userService.findUserByUsername(username);
 
             if(found !== null){
                 model.error = "username is not available";
@@ -29,8 +29,12 @@
 
                 };
                 //model.message = user;
-                userService.createUser(user);
-                $location.url("/user/" + user._id);
+                userService
+                    .createUser(user)
+                    .then(function (user) {
+                        $location.url("/user/" + user._id);
+                    })
+
             }
 
         }
