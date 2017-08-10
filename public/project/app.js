@@ -1,5 +1,5 @@
 (function () {
     angular
-        .module('PROJECT',['ngRoute'])
+        .module("Project",['ngRoute'])
 
 })();

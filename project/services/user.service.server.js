@@ -2,11 +2,11 @@ var app = require('../../express');
 var userModel = require('../models/users/user.model.server');
 
 
-app.get('/api/assignment/user', findUserByCrendential);
-app.get('/api/assignment/user/:userId', findUserById);
-app.post('/api/assignment/user', createUser);
-app.put('/api/assignment/user/:userId', updateUser);
-app.delete('/api/assignment/user/:userId', deleteUser);
+app.get('/api/project/user', findUserByCrendential);
+app.get('/api/project/user/:userId', findUserById);
+app.post('/api/project/user', createUser);
+app.put('/api/project/user/:userId', updateUser);
+app.delete('/api/project/user/:userId', deleteUser);
 
 
 

@@ -26,6 +26,12 @@ function findWebsiteById(req, res) {
 }
 
 function findAllWebsitesForUser(req, res) {
+    // userModel
+    //     .findAllWebsitesForUser(req.params.userId)
+    //     .then(function (websites) {
+    //         res.json(websites)
+    //     })
+
     var resultSet = [];
     for(var w in websites){
         if(websites[w].developerId === req.params.userId){
